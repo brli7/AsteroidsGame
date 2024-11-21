@@ -8,14 +8,24 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   protected double myXspeed, myYspeed; //holds the speed of travel in the x and y directions   
   protected double myPointDirection; //holds current direction the ship is pointing in degrees    
 
+
+  public void darken() {
+    if(myColor > 50) {
+      myColor--;
+    }
+  }
+  
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
   {          
+    if(myColor < 255) {
+      myColor++;
+    }
     //convert the current direction the floater is pointing to radians    
     double dRadians =myPointDirection*(Math.PI/180);     
     //change coordinates of direction of travel    
-    myXspeed += ((dAmount) * Math.cos(dRadians));    
-    myYspeed += ((dAmount) * Math.sin(dRadians));       
+      myXspeed += ((dAmount) * Math.cos(dRadians));  
+      myYspeed += ((dAmount) * Math.sin(dRadians));    
   }   
   public void turn (double degreesOfRotation)   
   {     
