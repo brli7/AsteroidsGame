@@ -32,10 +32,6 @@ public void draw() {
   ship.show();
 }
 
-public void mouseClicked() {
-  System.out.println(mouseX + "' " + mouseY);
-}
-
 public void keyPressed() {
   if(key == 'a') {
     rotateLeft = true;
