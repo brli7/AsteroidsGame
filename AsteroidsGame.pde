@@ -44,6 +44,7 @@ public void keyPressed() {
   }
   if(key == 'q') {
     ship.teleport();
+    ship.show();
   }
 }
 
