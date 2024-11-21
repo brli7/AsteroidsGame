@@ -4,7 +4,7 @@ boolean acceleration, rotateLeft, rotateRight = false;
 
 
 public void setup() {
-  size(1000,800);
+  size(800,800);
   //fullScreen();
   background(0);
   for(int i = 0; i < stars.length; i++) {
