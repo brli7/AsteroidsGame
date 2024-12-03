@@ -6,8 +6,8 @@ boolean acceleration, rotateLeft, rotateRight = false;
 
 
 public void setup() {
-  //size(800,800);
-  fullScreen();
+  size(800,800);
+  //fullScreen();
   background(0);
   for(int i = 0; i < stars.length; i++) {
     stars[i] = new Star();
