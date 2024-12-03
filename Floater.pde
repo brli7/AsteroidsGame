@@ -7,25 +7,19 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   protected double myCenterX, myCenterY; //holds center coordinates   
   protected double myXspeed, myYspeed; //holds the speed of travel in the x and y directions   
   protected double myPointDirection; //holds current direction the ship is pointing in degrees    
-
-
-  public void darken() {
-    if(myColor > 50) {
-      myColor--;
-    }
-  }
   
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
   {          
-    if(myColor < 255) {
-      myColor++;
+    if(myColor < 254) {
+      myColor += 2;
     }
     //convert the current direction the floater is pointing to radians    
     double dRadians =myPointDirection*(Math.PI/180);     
     //change coordinates of direction of travel    
       myXspeed += ((dAmount) * Math.cos(dRadians));  
       myYspeed += ((dAmount) * Math.sin(dRadians));    
+    //System.out.println(myXspeed + "' " + myYspeed);
   }   
   public void turn (double degreesOfRotation)   
   {     
@@ -57,10 +51,10 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
       myCenterY = height;    
     }   
   }   
-  public void show ()  //Draws the floater at the current position  
+  public void show (int stroker)  //Draws the floater at the current position  
   {             
     fill(myColor);   
-    stroke(myColor);    
+    stroke(stroker);    
     
     //translate the (x,y) center of the ship to the correct position
     translate((float)myCenterX, (float)myCenterY);
