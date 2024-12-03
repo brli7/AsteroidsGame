@@ -2,8 +2,8 @@ class Star {
   private int myX, myY, myColor;
   
   public Star() {
-    myX = (int)(Math.random()*800);
-    myY = (int)(Math.random()*800);
+    myX = (int)(Math.random()*width);
+    myY = (int)(Math.random()*height);
     myColor = (int)(Math.random()*255)+1;
   }
   
