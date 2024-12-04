@@ -53,5 +53,13 @@ class Spaceship extends Floater {
     if(myYspeed < maxSpeed*-1) {
       myYspeed++;
     }
+    shipX = (float)myCenterX;
+    shipY = (float)myCenterY;
+  }
+  public double getX() {
+    return myCenterX;
+  }
+  public double getY() {
+    return myCenterY;
   }
 }
