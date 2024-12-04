@@ -2,7 +2,7 @@ class Asteroid extends Floater {
   private double rotateSpeed;
   private int radius;
   public Asteroid() {
-    radius = (int)(Math.random()*40)+30;
+    radius = (int)(Math.random()*30)+20;
     corners = 5;
     xCorners = new int[5];
     xCorners[0] = (int)(Math.cos(2*(Math.PI)/5)*radius);
@@ -25,9 +25,16 @@ class Asteroid extends Floater {
     rotateSpeed = (Math.random()*11)-5;
     
   }
-
+  
   public void move() {
     super.move();
     myPointDirection += rotateSpeed;
+  }
+  
+  public boolean die() {
+    if(dist((float)myCenterX, (float)myCenterY, shipX, shipY) <= radius+5) {
+      return true;
+    }
+    return false;
   }
 }
