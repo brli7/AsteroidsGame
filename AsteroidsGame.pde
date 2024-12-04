@@ -1,21 +1,22 @@
-ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
-Asteroid rock;
 Spaceship ship = new Spaceship();
+ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
 Star[] stars = new Star[500];
 boolean acceleration, rotateLeft, rotateRight = false;
-
+float shipX, shipY;
 
 public void setup() {
-  size(800,800);
+  size(1200,800);
   //fullScreen();
   background(0);
   for(int i = 0; i < stars.length; i++) {
     stars[i] = new Star();
   }
-  for(int i = 0; i < 10; i++) {
+  for(int i = 0; i < 15; i++) {
     asteroids.add(new Asteroid());
   }
   ship.center();
+  shipX = width/2;
+  shipY = height/2;
 }
 
 public void draw() {
@@ -25,7 +26,10 @@ public void draw() {
   }
   for(int i = 0; i < asteroids.size(); i++) {
     asteroids.get(i).move();
-    asteroids.get(i).show(0);
+    asteroids.get(i).show(255);
+    if(asteroids.get(i).die()) {
+      asteroids.remove(i);
+    }
   }
   if(acceleration) {
     ship.accelerate(0.1);
@@ -40,10 +44,7 @@ public void draw() {
   }
   ship.move();
   ship.show(255);
-}
-
-public void mouseClicked() {
-  System.out.println(mouseX + "' " + mouseY);
+  
 }
 
 public void keyPressed() {
@@ -80,4 +81,3 @@ public void keyReleased() {
     acceleration = false;
   }
 }
-
