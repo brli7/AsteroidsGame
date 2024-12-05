@@ -29,6 +29,7 @@ public void draw() {
     asteroids.get(i).show(255);
     if(asteroids.get(i).die()) {
       asteroids.remove(i);
+      i--;
     }
   }
   if(acceleration) {
