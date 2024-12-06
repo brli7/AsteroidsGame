@@ -2,7 +2,6 @@ Spaceship ship = new Spaceship();
 ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
 Star[] stars = new Star[500];
 boolean acceleration, rotateLeft, rotateRight = false;
-float shipX, shipY;
 
 public void setup() {
   size(1200,800);
