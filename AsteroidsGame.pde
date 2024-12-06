@@ -27,7 +27,7 @@ public void draw() {
   for(int i = 0; i < asteroids.size(); i++) {
     asteroids.get(i).move();
     asteroids.get(i).show(255);
-    if(asteroids.get(i).die()) {
+    if(dist((float)asteroids.get(i).getX(), (float)asteroids.get(i).getY(), (float)ship.getX(), (float)ship.getY()) < asteroids.get(i).getRadius()) {
       asteroids.remove(i);
       i--;
     }
