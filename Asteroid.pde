@@ -31,10 +31,13 @@ class Asteroid extends Floater {
     myPointDirection += rotateSpeed;
   }
   
-  public boolean die() {
-    if(dist((float)myCenterX, (float)myCenterY, shipX, shipY) <= radius+5) {
-      return true;
-    }
-    return false;
+  public double getX() {
+    return myCenterX;
+  }
+  public double getY() {
+    return myCenterY;
+  }
+  public int getRadius() {
+    return radius;
   }
 }
