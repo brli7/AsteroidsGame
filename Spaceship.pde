@@ -29,9 +29,6 @@ class Spaceship extends Floater {
     myCenterX = width/2;
     myCenterY = height/2;
   }
-  public void shoot() {
-    
-  }
   public void darken() {
     if(myColor > 76) {
       myColor -= 5;
@@ -53,13 +50,20 @@ class Spaceship extends Floater {
     if(myYspeed < maxSpeed*-1) {
       myYspeed++;
     }
-    shipX = (float)myCenterX;
-    shipY = (float)myCenterY;
   }
   public double getX() {
     return myCenterX;
   }
   public double getY() {
     return myCenterY;
+  }
+  public double getDirection() {
+    return myPointDirection;
+  }
+  public double getXspeed() {
+    return myXspeed;
+  }
+  public double getYspeed() {
+    return myYspeed;
   }
 }
